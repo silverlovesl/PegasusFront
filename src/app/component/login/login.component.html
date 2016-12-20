@@ -1,0 +1,31 @@
+<form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+    <div class="card login-panel ui-fluid">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <i class="fa ui-icon-hot-tub fs50"></i>
+            </div>
+            <div class="ui-g-12">
+                <span class="md-inputfield">
+                    <input id="txtLoginid" type="text" formControlName="loginID" pInputText autocomplete="off" (keyup)="onLoingIDKeyUp($event)"/>
+                    <label for="txtLoginid" [ngClass]="isLoginIDInvalid ? 'invalid-message error' : ''">ログイン</label>
+                    <span class="invalid-message error" *ngIf="isLoginIDInvalid">
+                        LoginIDが必須です。
+                    </span>
+                </span>
+            </div>
+            <div class="ui-g-12">
+                <span class="md-inputfield">
+                    <input id="txtPassword" type="password" formControlName="password" pInputText autocomplete="off" (keyup)="onPasswordKeyUp($event)"/>
+                    <label for="txtLoginid" [ngClass]="isPasswordInvalid ? 'invalid-message error' : ''">パスワード</label>
+                    <span class="invalid-message error" *ngIf="isPasswordInvalid">
+                        Passwordが必須です。
+                    </span>
+                </span>
+            </div>
+            <div class="ui-g-12">
+                <button pButton type="submit" label="ログイン" icon="ui-icon-motorcycle" [disabled]="loginForm.controls.loginID.invalid || loginForm.controls.password.invalid"></button>
+            </div>
+        </div>
+    </div>
+    <p-growl [value]="msgs" sticky="sticky"></p-growl>
+</form>

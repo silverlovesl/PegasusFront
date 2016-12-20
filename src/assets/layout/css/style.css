@@ -1,0 +1,51 @@
+.fs12 {
+    font-size: 12px!important;
+}
+
+.fs14 {
+    font-size: 14px!important;
+}
+
+.fs16 {
+    font-size: 16px!important;
+}
+
+.fs20 {
+    font-size: 20px!important;
+}
+
+.fs24 {
+    font-size: 24px!important;
+}
+
+.fs30 {
+    font-size: 30px!important;
+}
+
+.fs36 {
+    font-size: 40px!important;
+}
+
+.fs40 {
+    font-size: 40px!important;
+}
+
+.fs45 {
+    font-size: 45px!important;
+}
+
+.fs50 {
+    font-size: 50px!important;
+}
+
+span.invalid-message {
+    font-size: 12px;
+    position: relative;
+    left: 1px;
+    float: left;
+}
+
+label.invalid-message.error,
+span.invalid-message.error {
+    color: #e62a10!important;
+}

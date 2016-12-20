@@ -1,22 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {ButtonModule} from 'primeng/primeng';
+import { MenuComponent } from './component/menu/menu.component';
+import { LoginComponent } from './component/login/login.component';
+import { KeyValuesPipe } from './pipe/key-values.pipe';
+import { Routing,AppRoutingProviders } from './routers';
+import { AuthManager } from './auth.manager';
+
+import {InputTextModule,
+        ButtonModule,
+        MessagesModule,
+        GrowlModule} from 'primeng/primeng';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,
+    KeyValuesPipe,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
+    InputTextModule,
+    ButtonModule,
     BrowserModule,
     FormsModule,
+    MessagesModule,
+    ReactiveFormsModule,
     HttpModule,
-    ButtonModule
+    Routing
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AppRoutingProviders,AuthManager],
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
